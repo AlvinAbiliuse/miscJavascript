@@ -1,0 +1,19 @@
+create function for fizzBuzz
+	create elDiv variable with div element
+	create message variable
+	check if input type is a number
+		loop i from 1 to input number
+			if i % 3 is 0
+				message += "Fizz "
+			elif i % 5 is 0
+				message += "Buzz "	
+			else
+				message += (i + " ")
+		change elDiv.value to message
+		
+	else 
+		change elDiv.value to "not a number, try again"
+	
+
+addEventListener on form submit
+
