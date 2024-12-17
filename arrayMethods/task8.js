@@ -1,16 +1,4 @@
-let sortByAge = (array) => {
-	let ages = array.map(e => e.age).sort((a, b) => a - b);
-	let newL = new Array();
-	for (i in ages) {
-		for (j in array) {
-			if (ages[i] === array[j].age){
-				newL.push(array[j]);
-				continue
-			}
-		}
-	}
-	arr = newL;
-}
+let sortByAge = () => arr.sort((a, b) => a.age - b.age);
 
 
 
@@ -22,7 +10,6 @@ let arr = [ pete, john, mary ];
 
 sortByAge(arr);
 
-// now: [john, mary, pete]
-console.log(arr[0].name); // John
-console.log(arr[1].name); // Mary
-console.log(arr[2].name); // Pete
+console.log(arr[0].name); 
+console.log(arr[1].name);
+console.log(arr[2].name);
