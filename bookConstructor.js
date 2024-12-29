@@ -8,8 +8,13 @@ function book(title, author, pages, read) {
 }
 
 function info() {
-
-
+	if (bookInfo.read == "yes") {
+		return `${bookInfo.title} by ${bookInfo.author}, ${bookInfo.pages} pages, read`
+	} else {
+		return `${bookInfo.title} by ${bookInfo.author}, ${bookInfo.pages} pages, not read yet`
+	}
 }
 
-const bookInfo = new book(
+const bookInfo = new book("The Hobbit", "R.R. Tolkien", 295, "yes");
+
+console.log(info());
