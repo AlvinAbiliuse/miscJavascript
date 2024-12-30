@@ -29,3 +29,5 @@ player2.sayName();
 
 player1.getMarker();
 player2.getMarker();
+
+log(Object.getPrototypeOf(player1));
