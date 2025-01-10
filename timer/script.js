@@ -1,7 +1,37 @@
 
+class Clock {
+	constructor({template}) {
+		this.template = template;	
+	}
+	render() {
+		let newTime = new Date();
+		let hours = newTime.getHours();
+		if (hours < 10) hours = "0" + hours;
+		
+		let minutes = newTime.getMinutes();
+		if (minutes < 10) minutes = "0" + minutes;
+
+		let seconds = newTime.getSeconds();
+		if (seconds < 10) seconds = "0" + seconds;
+		let output = this.template
+				.replace("h", hours)
+				.replace("m", minutes)
+				.replace("s", seconds);
+		console.log(output);
+	}
+
+	stop() {
+		 clearInterval(this.timer);
+	}
+
+	start() {
+		this.render();
+	 	this.timer = setInterval(() => this.render(), 1000);
+	}
+}
 
 
-
+/*
 function timer({template}) {
 	let timer, newTime, hours, minutes, seconds, output;
 	
@@ -33,11 +63,11 @@ function timer({template}) {
 		render();
 		timer = setInterval(render, 1000);
 	}
-}
+} */
 
 
 
 
-let clock = new timer({template: "h:m:s"});	
+let clock = new Clock({template: "h:m:s"});	
 clock.start();
 			
