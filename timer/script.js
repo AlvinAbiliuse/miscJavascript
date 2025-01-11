@@ -18,6 +18,13 @@ class Clock {
 				.replace("m", minutes)
 				.replace("s", seconds);
 		console.log(output);
+		let h = document.querySelector(".h");
+		let m = document.querySelector(".m");
+		let s = document.querySelector(".s");
+		h.textContent = hours;
+		m.textContent = minutes;
+		s.textContent = seconds;
+		
 	}
 
 	stop() {
