@@ -1,4 +1,4 @@
 const greeting = "hello";
-const farewell = "goodbye";
 
 export default greeting;
+export const farewell = "goodbye";
