@@ -7,6 +7,7 @@
 
 html {
 	height: 100%;
+	font-family: sans-serif;
 }
 
 body {
@@ -14,24 +15,30 @@ body {
 	display: grid;
 	justify-content: center;
 	align-items: center;
+	background: #bec1ff;
 }
 	
 
 .container {
-	background: pink;
-	padding: 5px;
+	background: #0910a2;
+	padding: 10px;
 	display: flex;
-	border-radius: 25px;
+	border-radius: 30px;
 	
 }
 
 .h, .m, .s {
 	width: 150px;
 	height: 150px;
-	margin: 5px;
-	padding: 40px;
-	background: white;
+	margin: 10px;
+	background: #bec1ff;
 	border-radius: 5px;
+	display: grid;
+	justify-content: center;
+	align-items: center;
+	font-size: 100px;
+	font-weight: bold;
+	color: #0910a2;
 }
 
 .h {
