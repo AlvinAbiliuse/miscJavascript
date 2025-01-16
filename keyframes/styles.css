@@ -1,0 +1,54 @@
+body {
+	height: 100px;
+	> div {
+		margin: 50px auto;
+		min-height: 400px;
+		width: 600px;
+		border: 1px solid black;
+		border-radius: 20px;
+		display: flex;
+		flex-direction: column;
+		gap: 40px;
+		justify-content: flex-start;
+		align-items: center;
+		padding-bottom: 10px;
+	}
+}
+
+.ball {
+	width: 200px;
+	height: 200px;
+	border-radius: 100px;
+	background-color: red;
+}
+
+.one .ball {
+	animation: 2s change-color infinite alternate;
+}
+
+.two .ball {
+	animation: 2s change-zoom infinite alternate;
+
+}	
+
+@keyframes change-color {
+	from {
+		background-color: red;
+	}
+	to {
+		background-color: blue;
+	}
+}		
+
+@keyframes change-zoom {
+	from {
+		background-color: red;
+	}
+	50% {
+		background-color: purple;
+		transform: scale(1.5);
+	}
+	to {
+		background-color: blue;
+	}
+}
