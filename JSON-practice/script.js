@@ -7,7 +7,6 @@ async function populate() {
 	
 	const response = await fetch(request);
 	const superHeroes = await response.json();
-	console.log(superHeroes);
 
 	populateHeader(superHeroes);
 	populateHeroes(superHeroes);
@@ -19,15 +18,60 @@ function populateHeader(heroes) {
 	headerTitle.textContent = heroes.squadName;
 	header.appendChild(headerTitle);
 	let headerInfo = document.createElement("p");
-	headerInfo.textContent = `Hometown: ${heroes.hometown} //
+	headerInfo.textContent = `Hometown: ${heroes.homeTown} //
 		formed: ${heroes.formed}`;
 	header.appendChild(headerInfo);
 };
 
 function populateHeroes(heroes) {
-	let x = 1;	
-
+	let section = document.querySelector("section");
+	for (i in heroes.members) {
+		let article = document.createElement("article");
+		let info = document.createElement("h2");
+		info.textContent = heroes.members[i].name;
+		article.append(info);
+		info = document.createElement("p");
+		info.textContent = `Secret Identity: 
+					${heroes.members[i].secretIdentity}`;
+		article.append(info);
+		info = document.createElement("p");
+		info.textContent = `Age: ${heroes.members[i].age}`;
+		article.append(info);
+		info = document.createElement("p");
+		info.textContent = "Superpowers:";
+		article.append(info);
+		info = document.createElement("ul");
+		for (j in heroes.members[i].powers) {
+			let li = document.createElement("li");
+			li.textContent = heroes.members[i].powers[j];
+			info.appendChild(li);
+		}
+		article.appendChild(info);
+		section.appendChild(article);
+	}	
 };
 
 
 populate();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
