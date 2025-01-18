@@ -3,9 +3,41 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>"MDN Local Server"</title>
+		<link rel="stylesheet" href="styles.css">
 	</head>
 	<body>
-	
+		
+		<div id="mainCard">
+			<h1>Web Storage</h1>
+			<p>This example is designed to demonstrate usage of 
+				the W3C Web Storage API. It should work as far back 
+				as IE8. Choose custom background colours, logos and 
+				fonts from the below drop down menus, then try 
+				closing and reopening the page — you will find that 
+				your choices are remembered, as they are stored 
+				using Web Storage. You can also visit the storage 
+				event output (opens in new tab). Open this, change 
+				some values in the index page, then look at the 
+				events page — you'll see the storage changes 
+				reported.</p>
+			<form>
+				<label for="background">Choose a background color; 
+					</label>
+				<input id="background" type="color">
+				<label>Choose font style</label>
+				<select>
+					<option>Serif</option>
+					<option>sans-serif</option>
+					<option>monospace</option>
+				</select>
+				<label for="image">Choose image</label>
+				<select>
+					<option></option>
+					<option></option>
+					<option></option>
+				</select>
+			</form>
+		</div>			
 		<script src="./script.js"></script>
 	</body>
 </html>
