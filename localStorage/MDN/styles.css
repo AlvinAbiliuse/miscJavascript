@@ -1,0 +1,33 @@
+
+* {
+	padding: 0;
+	margin: 0;
+	line-height: 1.4em;
+	box-sizing: border-box;
+}
+
+body {
+	height: 100vh;
+	padding: 100px;
+	padding-top: 150px;
+	font-family: sans-serif;
+	background: red;
+}
+
+#mainCard {
+	background: white;
+	position: relative;
+	width: 80%;
+	margin: 0 auto;
+	padding: 40px;
+	border: 1px solid black;
+	h1 {
+		position: absolute;
+		top: -60px;
+		font-size: 4em;
+		font-weight: bold;
+		color: white;
+		text-shadow: -3px -7px 0px black;
+	}
+	
+}
