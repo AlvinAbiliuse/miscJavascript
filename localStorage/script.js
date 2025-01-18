@@ -14,10 +14,9 @@ function addToDom() {
 	let elId = document.createElement("p");
 	elId.className = "identification"
 
-	h1.textContent = "Title: header";
-	p1.textContent = "Paragraph: paragraph";
-	elId.textContent = "id: " + 
-											Math.floor(Math.random() * 100000);
+	h1.textContent = "header";
+	p1.textContent = "paragraph";
+	elId.textContent = Math.floor(Math.random() * 100000);
 	
 	card.appendChild(h1);
 	card.appendChild(p1);
