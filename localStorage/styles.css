@@ -23,12 +23,17 @@
 }
 
 .mainContent {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(400px. 1fr);
+	display: flex;
+	flex-wrap: wrap;
 	.card {
-		padding: 20px;
+		width: 300px;
+		margin: 20px;
+		padding: 30px 50px;
 		margin: 50px;
 		border: 2px solid lightgray;
 		border-radius: 20px;
 	}
+	.card > * {
+		margin: 5px;
+	}	
 }
