@@ -12,3 +12,17 @@ function storageAvailable(type) {
 	}
 }
 storageAvailable("localStorage");
+
+
+let backgroundEl = document.querySelector("#background");
+let fontEl= document.querySelector("#font");
+
+backgroundEl.addEventListener("change", (e) => {
+	document.querySelector("body").style.background = 
+		e.target.value;
+});
+
+fontEl.addEventListener("change", (e) => {
+	document.querySelector("body").style.fontFamily =
+		e.target.value;
+});
