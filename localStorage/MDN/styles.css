@@ -20,7 +20,7 @@ body {
 	width: 80%;
 	margin: 0 auto;
 	padding: 40px;
-	border: 1px solid black;
+	border: 6px solid black;
 	h1 {
 		position: absolute;
 		top: -60px;
@@ -29,5 +29,19 @@ body {
 		color: white;
 		text-shadow: -3px -7px 0px black;
 	}
-	
+	form {
+		justify-content: center;
+		width: 70%;
+		margin: 0 auto;
+		display: grid;
+		gap: 20px;
+		grid-template-columns: 1fr 1fr;
+	}
+	label {
+		text-align: right;
+	}
+	form > * {
+		height: 20px;
+		margin-top: 15px;
+	}
 }
