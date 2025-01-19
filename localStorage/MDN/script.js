@@ -15,7 +15,14 @@ storageAvailable("localStorage");
 
 
 let backgroundEl = document.querySelector("#background");
-let fontEl= document.querySelector("#font");
+let fontEl = document.querySelector("#font");
+let imgEl = document.querySelector("#image");
+
+const images = {
+	"Mac and Cheese": "./images/maccheese.webp",
+	"Orange Chicken": "./images/orange.webp",
+	"Pizza": "./images/pizza.webp"
+}
 
 backgroundEl.addEventListener("change", (e) => {
 	document.querySelector("body").style.background = 
@@ -25,4 +32,9 @@ backgroundEl.addEventListener("change", (e) => {
 fontEl.addEventListener("change", (e) => {
 	document.querySelector("body").style.fontFamily =
 		e.target.value;
+});
+
+imgEl.addEventListener("change", (e) => {
+	document.querySelector(".lowerImage").setAttribute("src", 
+		images[e.target.value])
 });
