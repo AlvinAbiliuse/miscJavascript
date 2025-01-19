@@ -38,6 +38,7 @@ if (storage["MDN-Local-Storage"]) {
 let mdn = JSON.parse(storage["MDN-Local-Storage"]);
 
 function populate(obj) {
+	console.log("hi");
 	let bg = document.querySelector("body")
 	let font = document.querySelector("body")
 	let img = document.querySelector(".lowerImage")
@@ -49,7 +50,24 @@ function populate(obj) {
 	let bgInput = document.querySelector("#background");
 	let fontInput = document.querySelector("#font");
 	let imgInput = document.querySelector("#image");
+	console.log("hello");
+	console.log(fontInput);
 	bgInput.value = obj["bgColor"];
+		
+	for (let i=0; i < 3; i++) {
+		if ( fontInput.querySelector(
+			`option:nth-of-type(${i+1})`).
+			value == obj["font"]) {
+			fontInput.querySelector(`option:nth-of-type(${i+1})`).
+				setAttribute("selected", "selected");
+		} else if ( imgInput.querySelector(
+			`option:nth-of-type(${i+1})`).
+			value == obj["image"]) {
+			imgInput.querySelector(`option:nth-of-type(${i+1})`).
+				setAttribute("selected", "selected");
+		}
+
+	}
 };
 		
 		
