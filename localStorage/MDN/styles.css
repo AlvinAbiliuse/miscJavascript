@@ -13,7 +13,7 @@ body {
 	font-size: 16px;
 }
 
-#mainCard {
+.mainCard {
 	background: white;
 	position: relative;
 	width: 80%;
