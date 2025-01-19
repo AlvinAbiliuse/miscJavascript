@@ -13,17 +13,23 @@ window.addEventListener("storage", () => {
 		if (JSON.parse(data["MDN-Local-Storage"])[storageArr[i]]
 			!== currentData[storageArr[i]]) {
 			console.log(storageArr[i]);
-			document.querySelector(".key").textContent = "Key: " +
+			document.querySelector(".key span").textContent = 
 				storageArr[i];
-			document.querySelector(".old").textContent = 
-				"Old Value: " + currentData[storageArr[i]];
-			document.querySelector(".new").textContent = 
-				"New Value: " + JSON.parse(data[
-					"MDN-Local-Storage"])[storageArr[i]];
+			document.querySelector(".old span").textContent = 
+				currentData[storageArr[i]];
+			document.querySelector(".new span").textContent = 
+				JSON.parse(data["MDN-Local-Storage"])[storageArr[i]];
+			if (storageArr[i] == "bgColor") {
+				document.querySelector(".newColor").style.
+					background = JSON.parse(data[
+						"MDN-Local-Storage"])[storageArr[i]];
+				document.querySelector(".oldColor").style.
+					background = currentData[storageArr[i]];
+			};
 		}
 	}
 	currentData = JSON.parse(data["MDN-Local-Storage"]);
-	document.querySelector(".storage").textContent = "Storage Area: " + data[
-		"MDN-Local-Storage"];
+	document.querySelector(".storage span").textContent = 
+		data["MDN-Local-Storage"];
 });
 })();
