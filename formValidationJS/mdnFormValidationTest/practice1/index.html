@@ -15,6 +15,39 @@
       * {
         box-sizing: border-box;
       }
+			ul {
+				width: 400px;
+				margin-bottom: 30px;
+			}
+			li {
+				display: grid;
+				grid-template-columns: 1fr 2fr;
+			}
+			li:last-of-type {
+				margin-top: 20px;
+				button {
+					grid-column: 2;
+					margin-left: 40%;
+				}
+			}
+			input, textarea {
+				appearance: none;
+				padding: 5px;
+				border: 1px solid black;
+				margin-bottom: 10px;
+				box-sizing: border-box;
+			}
+			input:focus, textarea:focus {
+				border: 1px solid black;
+				outline: none;
+			}
+			textarea {
+				resize: none;
+				height: 100px;
+			}	
+			:invalid {
+				border-color: red;
+			}
     </style>
   </head>
 
@@ -24,26 +57,30 @@
       <ul>
         <li>
           <label for="uname">User name:</label>
-          <input type="text" name="uname" id="uname">
+          <input type="text" name="uname" id="uname" 
+						required>
         </li>
         <li>
           <label for="email">Email address:</label>
-          <input type="text" name="email" id="email">
+          <input type="email" name="email" id="email" 
+						required>
         </li>
         <li>
           <label for="phone">Phone number:</label>
-          <input type="text" name="phone" id="phone">
+          <input type="tel" name="phone" id="phone"
+						required>
         </li>
         <li>
           <label for="comment">Comment:</label>
-          <textarea name="comment" id="comment">
-          </textarea>
+          <textarea name="comment" id="comment"
+						required></textarea>
         </li>
         <li>
           <button>Submit comment</button>
         </li>
       </ul>
     </form>
+		<script src="./script.js"></script>
   </body>
 
 </html>
