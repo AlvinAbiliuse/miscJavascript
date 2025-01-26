@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Form Validation using JS</title>
+		<link rel="stylesheet" href="./styles.css" />
+	</head>
+
+	<body>
+		<form action="https://httpbin.org/post" method="POST">
+			<h2>Form</h2>
+			<ul>
+				<li>
+					<input
+						type="email"
+						id="email"
+						name="email"
+						placeholder="Email: "
+						required
+					/>
+					<span class="errorMessage">Type in your email</span>
+				</li>
+
+				<li>
+					<input
+						type="text"
+						id="country"
+						name="country"
+						placeholder="Country:"
+						required
+					/>
+					<span class="errorMessage"></span>
+				</li>
+
+				<li>
+					<input
+						type="number"
+						id="zipcode"
+						placeholder="Zip Code: "
+						name="zipcode"
+						required
+					/>
+					<span class="errorMessage"></span>
+				</li>
+
+				<li>
+					<input
+						type="password"
+						id="pass"
+						name="pass"
+						placeholder="Password:"
+						required
+					/>
+					<span class="errorMessage"></span>
+				</li>
+
+				<li>
+					<input
+						type="password"
+						id="passConfirm"
+						name="passConfirm"
+						placeholder="Confirm Password"
+						required
+					/>
+					<span class="errorMessage"></span>
+				</li>
+			</ul>
+			<button>Submit</button>
+		</form>
+		<script src="./script.js"></script>
+	</body>
+</html>
