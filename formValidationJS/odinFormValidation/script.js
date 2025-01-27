@@ -34,6 +34,14 @@ function formCheck(e) {
 	);
 }
 
+function checkPass(e) {
+	console.log(pass[0].value);
+	console.log(passConfirm[0].value);
+	try {
+		e.preventDefault();
+	} catch {}
+}
+
 email[0].addEventListener("focusout", () => {
 	checkValidity(email);
 });
@@ -48,9 +56,16 @@ zipcode[0].addEventListener("focusout", () => {
 
 pass[0].addEventListener("focusout", () => {
 	checkValidity(pass);
+	console.log(pass[0].value.length);
+});
+
+passConfirm[0].addEventListener("focusout", () => {
+	checkPass();
+	console.log(pass[0].value.length);
 });
 
 formSubmit[0].addEventListener("click", (e) => {
 	console.log(e);
 	formCheck(e);
+	checkPass(e);
 });
