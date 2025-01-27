@@ -20,7 +20,7 @@ body {
 }
 
 form {
-	border: 1px solid black;
+	border: 1px solid gray;
 	border-radius: 20px;
 	padding: 20px;
 	width: 400px;
@@ -29,17 +29,21 @@ form {
 	}
 	li {
 		list-style: none;
-		margin: 10px;
+		margin: 15px;
 	}
 	li span {
 		display: block;
 	}
 	input {
-		padding: 4px;
+		padding: 8px 15px;
 		width: 100%;
 		appearance: none;
-		border-radius: auto;
+		border-radius: 5px;
+		border: 1px solid gray;
+	}
+	input:focus {
 		border: 1px solid black;
+		outline: none;
 	}
 	.errorMessage {
 		padding: 2px 25px;
@@ -67,5 +71,8 @@ form {
 	}
 	.invalid {
 		border: 1px solid red;
+	}
+	:valid {
+		border: 1px solid blue;
 	}
 }
