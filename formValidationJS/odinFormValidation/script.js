@@ -10,46 +10,47 @@ let zipcode = [
 let pass = [document.getElementById("pass"), "Please enter a password"];
 let passConfirm = [
 	document.getElementById("passConfirm"),
+	"Please confirm the password",
 	"password confirmation does not match the password!",
 ];
-let form = [document.querySelector("form")];
+let formSubmit = [document.querySelector("form button")];
 
-function checkValidity(data) {
+function checkValidity(data, e) {
 	if (!data[0].validity.valid) {
 		data[0].nextElementSibling.textContent = data[1];
 		data[0].classList.add("invalid");
+		try {
+			e.preventDefault();
+		} catch {}
 	} else {
 		data[0].classList.remove("invalid");
 		data[0].nextElementSibling.textContent = "";
 	}
 }
 
-function passCheck(e) {
-	console.log(pass.value);
-	if (pass.value.length == 0) {
-		pass[0].nextElementSibling.textContent = pass[1];
-		e.preventDefault();
-	} else {
-	}
-	pass[0].nextElementSibling.textContent = "";
-	if ((pass.value.length = pass.value != passConfirm.value)) {
-		console.log("pass");
-	}
+function formCheck(e) {
+	[email, country, zipcode, pass, passConfirm].forEach((variable) =>
+		checkValidity(variable, e)
+	);
 }
-
-function formCheck() {}
 
 email[0].addEventListener("focusout", () => {
 	checkValidity(email);
 });
+
 country[0].addEventListener("focusout", () => {
 	checkValidity(country);
 });
+
 zipcode[0].addEventListener("focusout", () => {
 	checkValidity(zipcode);
 });
-passConfirm[0].addEventListener("focusout", passCheck);
-form[0].addEventListener("submit", (e) => {
-	passCheck(e);
-	e.preventDefault();
+
+pass[0].addEventListener("focusout", () => {
+	checkValidity(pass);
+});
+
+formSubmit[0].addEventListener("click", (e) => {
+	console.log(e);
+	formCheck(e);
 });
