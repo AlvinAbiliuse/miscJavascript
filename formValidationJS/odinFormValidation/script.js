@@ -10,7 +10,6 @@ let zipcode = [
 let pass = [document.getElementById("pass"), "Please enter a password"];
 let passConfirm = [
 	document.getElementById("passConfirm"),
-	"Please confirm the password",
 	"password confirmation does not match the password!",
 ];
 let formSubmit = [document.querySelector("form button")];
@@ -19,11 +18,13 @@ function checkValidity(data, e) {
 	if (!data[0].validity.valid) {
 		data[0].nextElementSibling.textContent = data[1];
 		data[0].classList.add("invalid");
+		data[0].classList.remove("valid");
 		try {
 			e.preventDefault();
 		} catch {}
 	} else {
 		data[0].classList.remove("invalid");
+		data[0].classList.add("valid");
 		data[0].nextElementSibling.textContent = "";
 	}
 }
@@ -35,11 +36,19 @@ function formCheck(e) {
 }
 
 function checkPass(e) {
-	console.log(pass[0].value);
-	console.log(passConfirm[0].value);
-	try {
-		e.preventDefault();
-	} catch {}
+	if (pass[0].value != passConfirm[0].value) {
+		console.log("nyet");
+		passConfirm[0].classList.add("invalid");
+		passConfirm[0].classList.remove("valid");
+		passConfirm[0].nextElementSibling.textContent = passConfirm[1];
+		try {
+			e.preventDefault();
+		} catch {}
+	} else {
+		passConfirm[0].classList.remove("invalid");
+		passConfirm[0].classList.add("valid");
+		passConfirm[0].nextElementSibling.textContent = "";
+	}
 }
 
 email[0].addEventListener("focusout", () => {
@@ -56,6 +65,7 @@ zipcode[0].addEventListener("focusout", () => {
 
 pass[0].addEventListener("focusout", () => {
 	checkValidity(pass);
+	checkPass();
 	console.log(pass[0].value.length);
 });
 

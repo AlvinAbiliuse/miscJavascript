@@ -72,7 +72,7 @@ form {
 	.invalid {
 		border: 1px solid red;
 	}
-	:valid {
+	.valid {
 		border: 1px solid blue;
 	}
 }
