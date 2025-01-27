@@ -36,18 +36,24 @@ function formCheck(e) {
 }
 
 function checkPass(e) {
-	if (pass[0].value != passConfirm[0].value) {
-		console.log("nyet");
-		passConfirm[0].classList.add("invalid");
-		passConfirm[0].classList.remove("valid");
-		passConfirm[0].nextElementSibling.textContent = passConfirm[1];
-		try {
-			e.preventDefault();
-		} catch {}
-	} else {
-		passConfirm[0].classList.remove("invalid");
-		passConfirm[0].classList.add("valid");
-		passConfirm[0].nextElementSibling.textContent = "";
+	if (passConfirm[0].value.length > 0) {
+		if (pass[0].value != passConfirm[0].value) {
+			console.log("nyet");
+			pass[0].classList.add("invalid");
+			pass[0].classList.remove("valid");
+			passConfirm[0].classList.add("invalid");
+			passConfirm[0].classList.remove("valid");
+			passConfirm[0].nextElementSibling.textContent = passConfirm[1];
+			try {
+				e.preventDefault();
+			} catch {}
+		} else {
+			pass[0].classList.remove("invalid");
+			pass[0].classList.add("valid");
+			passConfirm[0].classList.remove("invalid");
+			passConfirm[0].classList.add("valid");
+			passConfirm[0].nextElementSibling.textContent = "";
+		}
 	}
 }
 
