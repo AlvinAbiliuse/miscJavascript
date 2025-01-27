@@ -65,4 +65,7 @@ form {
 		font-size: 28px;
 		margin: 10px;
 	}
+	.invalid {
+		border: 1px solid red;
+	}
 }
