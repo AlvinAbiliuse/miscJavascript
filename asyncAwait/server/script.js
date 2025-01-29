@@ -23,3 +23,15 @@ const server = {
 		});
 	},
 };
+
+function getPersonsInfo(name) {
+	return server.getPeople().then((people) => {
+		return people.find((person) => {
+			return person.name === name;
+		});
+	});
+}
+
+getPersonsInfo("Odin").then((message) => console.log(message));
+getPersonsInfo("Thor").then((message) => console.log(message));
+getPersonsInfo("Freyja").then((message) => console.log(message));
