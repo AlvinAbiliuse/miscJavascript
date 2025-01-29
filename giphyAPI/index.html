@@ -18,7 +18,7 @@
 					return response.json();
 				})
 				.then(function (response) {
-					img.setAttribute("src", response.data.images.original.url);
+					img.src = response.data.images.original.url;
 				});
 		</script>
 	</body>
