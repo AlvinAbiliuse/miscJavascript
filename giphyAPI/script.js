@@ -1,4 +1,7 @@
 let newImage = document.querySelector(".newImg");
+let searchInput = document.querySelector(".searchInput");
+let searchBtn = document.querySelector(".searchBtn");
+
 let s = "cats";
 let key = "sr3YmfucDXY2tWhybfwINnvqbsDSqSRw";
 
@@ -16,4 +19,10 @@ function getImage(search) {
 }
 
 getImage(s);
+searchBtn.addEventListener("click", () => {
+	s = searchInput.value;
+	searchInput.value = "";
+	getImage(s);
+});
+
 newImage.addEventListener("click", () => getImage(s));
