@@ -1,12 +1,25 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>GIPHY API</title>
-	<link rel="stylesheet" href="./styles.css">
-</head>
-<body>
-	<img src="#">
-	<script src="./script.js"></script>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<title>GIPHY API</title>
+	</head>
+	<body>
+		<img />
+		<script>
+			const img = document.querySelector("img");
+			fetch(
+				"https://api.giphy.com/v1/gifs/translate?api_key=sr3YmfucDXY2tWhybfwINnvqbsDSqSRw&s=cats",
+				{
+					mode: "cors",
+				}
+			)
+				.then(function (response) {
+					return response.json();
+				})
+				.then(function (response) {
+					img.setAttribute("src", response.data.images.original.url);
+				});
+		</script>
+	</body>
 </html>
