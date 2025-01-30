@@ -24,14 +24,16 @@ const server = {
 	},
 };
 
-function getPersonsInfo(name) {
-	return server.getPeople().then((people) => {
-		return people.find((person) => {
-			return person.name === name;
-		});
+async function getPersonsInfo(name) {
+	const people = await server.getPeople();
+	const person = people.find((person) => {
+		return person.name === name;
 	});
+	return person;
 }
 
-getPersonsInfo("Odin").then((message) => console.log(message));
-getPersonsInfo("Thor").then((message) => console.log(message));
-getPersonsInfo("Freyja").then((message) => console.log(message));
+for (let i = 0; i < 3; i++) {
+	getPersonsInfo(["Odin", "Thor", "Freyja"][i]).then((message) =>
+		console.log(message)
+	);
+}
