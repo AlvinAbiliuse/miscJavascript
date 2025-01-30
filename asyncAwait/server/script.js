@@ -32,8 +32,11 @@ async function getPersonsInfo(name) {
 	return person;
 }
 
-for (let i = 0; i < 3; i++) {
-	getPersonsInfo(["Odin", "Thor", "Freyja"][i]).then((message) =>
-		console.log(message)
-	);
+async function start() {
+	for (let i = 0; i < 3; i++) {
+		let person = await getPersonsInfo(["Odin", "Thor", "Freyja"][i]);
+		console.log(person);
+	}
 }
+
+start();
