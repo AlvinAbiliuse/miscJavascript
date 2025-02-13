@@ -1,4 +1,8 @@
+
 {
+	"scripts" {
+		"texts": "jest"
+	},
   "devDependencies": {
     "jest": "^29.7.0"
   }
