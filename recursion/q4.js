@@ -1,7 +1,7 @@
 function all(arr, callback) {
 	if (arr.length === 0) return true;
 	if (callback(arr[0])) {
-		arr.splice(0, 1);
+		arr.shift();
 		return all(arr, callback);
 	} else {
 		return false;
