@@ -1,14 +1,15 @@
-let total = 0;
-
 function totalIntegers(arr) {
-	for (let i in arr) {
-		if (typeof arr[i] == "object") {
-			totalIntegers(arr[i]);
-		} else if (typeof arr[i] == "number") {
-			total = total + arr[i];
-		}
+	if (arr.length == 0) return 0;
+	let total = 0;
+	let first = arr.shift();
+
+	if (Array.isArray(first)) {
+		total += totalIntegers(first);
+	} else if (Number.isInteger(first)) {
+		total += 1;
 	}
-	return total;
+
+	return total + totalIntegers(arr);
 }
 
 var seven = totalIntegers([[[5], 3], 0, 2, ["foo"], [], [4, [5, 6]]]); // 7
