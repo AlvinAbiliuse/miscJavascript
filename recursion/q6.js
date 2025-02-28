@@ -2,6 +2,7 @@ function contains(object, q) {
 	let keys = Object.keys(object);
 	if (keys.length == 0) return false;
 	for (i in keys) {
+		console.log(object[keys[i]], q);
 		if (object[keys[i]] === q) {
 			console.log("gottem");
 			return true;
