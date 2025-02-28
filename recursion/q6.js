@@ -1,14 +1,11 @@
 function contains(object, q) {
-	let keys = Object.keys(object);
-	if (keys.length == 0) return false;
-	for (i in keys) {
-		console.log(object[keys[i]], q);
-		if (object[keys[i]] === q) {
-			console.log("gottem");
+	if (object.length == 0) return false;
+	for (i in object) {
+		if (object[i] === q) {
 			return true;
 		}
-		if (typeof object[keys[i]] === "object") {
-			return contains(object[keys[i]]);
+		if (typeof object[i] === "object") {
+			return contains(object[i], q);
 		}
 	}
 	return false;
