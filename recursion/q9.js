@@ -1,6 +1,6 @@
 function replicate(count, num) {
 	if (count <= 0) return [];
-	return [num] + " " + replicate(count - 1, num);
+	return [num].concat(replicate(count - 1, num));
 }
 
 console.log(replicate(3, 5)); // [5, 5, 5]
