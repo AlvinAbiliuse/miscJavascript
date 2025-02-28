@@ -1,15 +1,16 @@
-function contains(object, search) {
-	if (Array.isArray(object)) {
-		if (object.length === 0) return false;
-		for (let i in object) {
-			console.log(object[i]);
+function contains(object, q) {
+	let keys = Object.keys(object);
+	if (keys.length == 0) return false;
+	for (i in keys) {
+		if (object[keys[i]] === q) {
+			console.log("gottem");
+			return true;
 		}
-}
-	if (typeof object === "object") {
-		console.log("yes");
-		return contains(Object.keys(object));
-	} else {
-		
+		if (typeof object[keys[i]] === "object") {
+			return contains(object[keys[i]]);
+		}
+	}
+	return false;
 }
 
 var nestedObject = {
@@ -29,3 +30,6 @@ var nestedObject = {
 
 let hasIt = contains(nestedObject, 44); // true
 let doesntHaveIt = contains(nestedObject, "foo"); // false
+
+console.log(hasIt);
+console.log(doesntHaveIt);
