@@ -5,7 +5,7 @@ function SumSquares(arr) {
 	let first = arr.shift();
 	if (Array.isArray(first)) {
 		total += SumSquares(first);
-	} else if (Number.isNumber(first)) {
+	} else if (Number.isInteger(first)) {
 		total += first * first;
 	}
 
