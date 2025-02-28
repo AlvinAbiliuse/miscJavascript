@@ -1,8 +1,6 @@
 function productOfArray(arr) {
 	if (arr.length == 0) return 1;
-	let first = arr[0];
-	arr.shift();
-	return first * productOfArray(arr);
+	return arr.shift() * productOfArray(arr);
 }
 
 var six = productOfArray([1, 2, 3]); // 6
