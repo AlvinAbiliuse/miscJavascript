@@ -3,11 +3,10 @@ function SumSquares(arr) {
 
 	let total = 0;
 	let first = arr.shift();
-
-	if (Array.isArray(arr)) {
-		total += SumSquares(arr);
+	if (Array.isArray(first)) {
+		total += SumSquares(first);
 	} else {
-		total += first;
+		total += first * first;
 	}
 
 	return total + SumSquares(arr);
