@@ -1,11 +1,18 @@
+
+// incomplete
+
 function prime(max) {
 	let current = 0;
 	let arr = [];
 	while (current !== max) {
-		for (let i = 1; i < current; i++) {
-			if (current % i === 0) break;
-			arr.push(current);
+		let sol = false;
+		for (let i = 2; i < current; i++) {
+			if (current % i === 0) {
+				sol = false;
+				break;
+			} else sol = true;
 		}
+		if (sol) arr.push(current);
 		current++;
 	}
 	return arr;
